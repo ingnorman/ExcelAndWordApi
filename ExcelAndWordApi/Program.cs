@@ -1,9 +1,3 @@
-using ExcelAndWordApi.Entities;
-using ExcelAndWordApi.Persistence;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 

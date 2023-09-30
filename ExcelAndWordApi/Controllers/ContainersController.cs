@@ -31,5 +31,14 @@ namespace ExcelAndWordApi.Controllers
             
             return Ok(new { Container = containers, Blobs = containers.GetBlobs().ToArray() });
         }
+
+        [HttpPost("{containerName}")]
+        public async Task<IActionResult> postContainer([FromHeader(Name = "ApiKey")] string apikey, string containerName)
+        {
+            BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
+            var containers = blobServiceClient.CreateBlobContainer(containerName, publicAccessType: PublicAccessType.BlobContainer);
+
+            return Ok(containers);
+        }
     }
 }
